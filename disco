@@ -1,0 +1,17 @@
+
+struct UIViewControllerRepresentableUsage: View {
+    
+    @State private var image: UIImage?
+    @State private var showScreen: Bool = false
+    
+    var body: some View {
+        ZStack {
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+            }
+            Button {
+                showScreen.toggle()
+            } label: {
+                Text("standard")
+            }
